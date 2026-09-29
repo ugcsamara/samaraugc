@@ -7,39 +7,42 @@
 <meta name="description" content="Portfólio de Samara Dias, UGC Creator: vídeos autênticos para marcas de beleza, moda, casa, fitness e muito mais.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --vanilla:#cfe0bc;
-    --vanilla-escuro:#49622d;
-    --amarelo:#ffd166;
-    --gelo:#f6f7f5;
-    --branco:#ffffff;
-    --texto:#1c211f;
-    --texto-suave:#5b655f;
-    --linha:#e4e7e3;
-    --raio:20px;
-    --raio-pequeno:12px;
-    --sombra:0 10px 30px rgba(20,30,26,.08);
-    --sombra-forte:0 18px 40px rgba(20,30,26,.14);
-    --altura-header:104px;
+    --creme:#ece5d6;
+    --branco:#fffdf9;
+    --azul:#5f86bd;
+    --azul-escuro:#3d5a82;
+    --vermelho:#b42a2a;
+    --vermelho-escuro:#8a1f1f;
+    --tinta:#2c2a26;
+    --tinta-suave:#6b6459;
+    --linha:#ddd0b3;
+    --raio:22px;
+    --raio-pequeno:14px;
+    --sombra:0 10px 28px rgba(44,42,38,.10);
+    --sombra-forte:0 20px 42px rgba(44,42,38,.16);
+    --altura-header:112px;
+    --erro:#8a1f1f;
+    --erro-fundo:#f6e2df;
   }
   *,*::before,*::after{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
     margin:0;
-    font-family:'Manrope',sans-serif;
-    color:var(--texto);
-    background:var(--branco);
+    font-family:'Jost',sans-serif;
+    color:var(--tinta);
+    background:var(--creme);
     padding-top:var(--altura-header);
-    line-height:1.55;
+    line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   img,svg{ max-width:100%; display:block; }
-  h1,h2,h3{ font-family:'Manrope',sans-serif; font-weight:800; line-height:1.15; margin:0 0 .6em; }
-  p{ margin:0 0 1em; color:var(--texto-suave); }
+  h1,h2,h3{ font-family:'Cormorant Garamond',serif; font-weight:600; line-height:1.12; margin:0 0 .6em; }
+  p{ margin:0 0 1em; color:var(--tinta-suave); }
   a{ color:inherit; }
-  em{ font-family:'Instrument Serif',serif; font-style:italic; font-weight:400; color:var(--vanilla-escuro); }
+  em{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; color:var(--vermelho); }
   ul{ margin:0; padding:0; list-style:none; }
   button{ font-family:inherit; cursor:pointer; }
   input,textarea{ font-family:inherit; font-size:1rem; }
@@ -47,7 +50,7 @@
 
   /* foco visível para navegação por teclado */
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-    outline:3px solid var(--amarelo);
+    outline:3px solid var(--azul);
     outline-offset:3px;
     border-radius:4px;
   }
@@ -59,50 +62,65 @@
 
   .skip-link{
     position:absolute; left:-9999px; top:0; z-index:1000;
-    background:var(--vanilla); color:var(--texto); padding:.9rem 1.4rem;
-    border-radius:0 0 12px 0; font-weight:700; text-decoration:none;
+    background:var(--vermelho); color:#fff; padding:.9rem 1.4rem;
+    border-radius:0 0 12px 0; font-weight:600; text-decoration:none;
   }
   .skip-link:focus{ left:0; }
+
+  /* ===== laço decorativo (motivo do modelo) ===== */
+  .laco{ color:var(--vermelho); flex:none; }
+  .secao h2{
+    position:relative; padding-bottom:1.3rem;
+  }
+  .secao h2::after{
+    content:"";
+    position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:2.4rem; height:1.35rem;
+    background-repeat:no-repeat; background-position:center; background-size:contain;
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36"><path d="M30 18C30 18 30 4 12 4C2 4 0 12 4 17C8 22 20 20 30 18Z" fill="%23b42a2a"/><path d="M34 18C34 18 34 4 52 4C62 4 64 12 60 17C56 22 44 20 34 18Z" fill="%23b42a2a"/><path d="M30 18C30 18 30 32 12 32C2 32 0 24 4 19C8 14 20 16 30 18Z" fill="%23b42a2a"/><path d="M34 18C34 18 34 32 52 32C62 32 64 24 60 19C56 14 44 16 34 18Z" fill="%23b42a2a"/><ellipse cx="32" cy="18" rx="5.5" ry="4.5" fill="%23b42a2a"/></svg>');
+  }
 
   /* ===== cabeçalho fixo ===== */
   .site-header{
     position:fixed; top:0; left:0; right:0; z-index:200;
     background:var(--branco);
-    box-shadow:0 2px 14px rgba(20,30,26,.06);
+    box-shadow:0 2px 16px rgba(44,42,38,.08);
   }
   .faixa-topo{
-    background:var(--vanilla); color:var(--texto); text-align:center;
-    font-size:.82rem; font-weight:700; letter-spacing:.02em;
+    background:var(--vermelho); color:var(--creme); text-align:center;
+    font-size:.8rem; font-weight:500; letter-spacing:.05em;
     padding:.5rem 1rem;
   }
   .nav-container{
-    max-width:1180px; margin:0 auto; padding:.85rem 1.5rem;
+    max-width:1180px; margin:0 auto; padding:.9rem 1.5rem;
     display:flex; align-items:center; justify-content:space-between; gap:1rem;
   }
   .nav-logo{
-    font-weight:800; font-size:1.25rem; text-decoration:none; color:var(--texto);
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600;
+    font-size:1.5rem; text-decoration:none; color:var(--tinta);
   }
   .nav-menu{
-    display:flex; align-items:center; gap:1.6rem;
+    display:flex; align-items:center; gap:1.7rem;
   }
   .nav-link{
-    text-decoration:none; font-weight:600; font-size:.95rem; color:var(--texto);
-    padding:.3rem 0; border-bottom:2px solid transparent;
+    text-decoration:none; font-weight:500; font-size:.92rem; color:var(--tinta);
+    padding:.3rem 0; border-bottom:1.5px solid transparent;
     transition:border-color .2s ease, color .2s ease;
   }
-  .nav-link:hover{ color:var(--vanilla-escuro); border-color:var(--vanilla-escuro); }
+  .nav-link:hover{ color:var(--vermelho); border-color:var(--vermelho); }
   .nav-cta{
-    background:var(--vanilla); color:var(--texto); padding:.6rem 1.1rem;
+    background:var(--vermelho); color:#fff; padding:.6rem 1.2rem;
     border-radius:999px; border-bottom:none !important;
   }
-  .nav-cta:hover{ background:var(--vanilla-escuro); color:#fff; }
+  .nav-cta:hover{ background:var(--vermelho-escuro); color:#fff; }
   .nav-toggle{
     display:none; flex-direction:column; justify-content:center; gap:5px;
     width:42px; height:38px; background:none; border:1px solid var(--linha);
     border-radius:10px; padding:0 9px;
   }
   .nav-toggle span{
-    display:block; height:2px; width:100%; background:var(--texto); border-radius:2px;
+    display:block; height:2px; width:100%; background:var(--tinta); border-radius:2px;
   }
 
   @media (max-width:860px){
@@ -110,7 +128,7 @@
     .nav-menu{
       position:absolute; top:100%; left:0; right:0;
       flex-direction:column; align-items:stretch; gap:0;
-      background:var(--branco); box-shadow:0 12px 20px rgba(20,30,26,.1);
+      background:var(--branco); box-shadow:0 12px 22px rgba(44,42,38,.12);
       max-height:0; overflow:hidden; transition:max-height .3s ease;
     }
     .nav-menu.aberto{ max-height:420px; }
@@ -119,38 +137,40 @@
   }
 
   /* ===== utilidades gerais ===== */
-  .secao{ padding:5rem 1.5rem; max-width:1180px; margin:0 auto; }
-  .secao-cinza{ background:var(--gelo); max-width:none; }
-  .secao-cinza > *{ max-width:1180px; margin-left:auto; margin-right:auto; }
-  .secao h2{ font-size:clamp(1.8rem,4vw,2.6rem); text-align:center; margin-bottom:2.6rem; }
+  .secao{ padding:5.2rem 1.5rem; max-width:1180px; margin:0 auto; }
+  .secao-creme{ background:var(--branco); max-width:none; }
+  .secao-creme > *{ max-width:1180px; margin-left:auto; margin-right:auto; }
+  .secao h2{ font-size:clamp(1.9rem,4vw,2.8rem); text-align:center; margin-bottom:1.4rem; font-weight:600; }
 
   .botao{
     display:inline-flex; align-items:center; gap:.4rem; text-decoration:none;
-    font-weight:700; padding:.9rem 1.6rem; border-radius:999px;
-    border:2px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+    font-weight:600; font-size:.95rem; padding:.9rem 1.7rem; border-radius:999px;
+    border:1.5px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
   }
   .botao:hover{ transform:translateY(-2px); box-shadow:var(--sombra); }
-  .botao-primario{ background:var(--vanilla); color:var(--texto); }
-  .botao-primario:hover{ background:var(--vanilla-escuro); color:#fff; }
-  .botao-secundario{ background:var(--branco); color:var(--texto); border-color:var(--linha); }
-  .botao-whats{ background:var(--amarelo); color:#3a2c00; }
-  .botao-mini{ padding:.5rem 1.05rem; font-size:.88rem; }
+  .botao-primario{ background:var(--vermelho); color:#fff; }
+  .botao-primario:hover{ background:var(--vermelho-escuro); color:#fff; }
+  .botao-secundario{ background:var(--branco); color:var(--tinta); border-color:var(--linha); }
+  .botao-secundario:hover{ border-color:var(--vermelho); color:var(--vermelho); }
+  .botao-whats{ background:var(--azul); color:#fff; }
+  .botao-whats:hover{ background:var(--azul-escuro); }
+  .botao-mini{ padding:.5rem 1.1rem; font-size:.86rem; }
 
-  .placeholder-bloco{ position:relative; margin:0; }
+  .placeholder-bloco{ position:relative; margin:0; overflow:hidden; border-radius:var(--raio); }
   .placeholder-gradiente{
     width:100%; height:100%; border-radius:var(--raio);
-    background:linear-gradient(135deg,var(--vanilla-escuro) 0%,var(--vanilla) 55%,var(--amarelo) 100%);
+    background:linear-gradient(135deg,var(--azul) 0%,var(--vermelho) 100%);
     min-height:220px;
   }
   .legenda-formato{
-    text-align:center; font-size:.78rem; color:var(--texto-suave);
-    margin-top:.5rem;
+    text-align:center; font-size:.78rem; color:var(--tinta-suave);
+    margin-top:.5rem; font-style:italic;
   }
   .selo-novo{
-    position:absolute; top:14px; right:14px; background:var(--amarelo);
-    color:#3a2c00; font-weight:800; font-size:.72rem; letter-spacing:.05em;
-    text-transform:uppercase; padding:.4rem .75rem; border-radius:999px;
-    box-shadow:var(--sombra);
+    position:absolute; top:16px; right:-42px; width:160px; text-align:center;
+    transform:rotate(45deg); background:var(--vermelho); color:#fff;
+    font-weight:600; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+    padding:.4rem 0; box-shadow:var(--sombra);
   }
 
   /* ===== animação de entrada ===== */
@@ -162,29 +182,30 @@
   }
 
   /* ===== 1. capa ===== */
-  #capa{ max-width:none; padding:4rem 1.5rem 0; }
+  #capa{ max-width:none; padding:4.2rem 1.5rem 0; }
   .hero-grade{
     max-width:1180px; margin:0 auto; display:grid;
     grid-template-columns:1.15fr .85fr; gap:3rem; align-items:center;
   }
   .hero-etiqueta{
-    text-transform:uppercase; letter-spacing:.08em; font-size:.85rem;
-    font-weight:700; color:var(--vanilla-escuro); margin-bottom:.8rem;
+    display:flex; align-items:center; gap:.5rem;
+    text-transform:uppercase; letter-spacing:.1em; font-size:.85rem;
+    font-weight:600; color:var(--vermelho); margin-bottom:.9rem;
   }
-  .hero-etiqueta em{ text-transform:none; letter-spacing:0; font-size:1.15rem; }
-  .hero-conteudo h1{ font-size:clamp(2.6rem,6vw,4.2rem); margin-bottom:.5rem; }
-  .hero-frase{ font-size:1.15rem; max-width:32rem; }
+  .hero-etiqueta em{ text-transform:none; letter-spacing:0; font-size:1.2rem; }
+  .hero-conteudo h1{ font-size:clamp(2.8rem,6vw,4.6rem); margin-bottom:.5rem; font-style:italic; }
+  .hero-frase{ font-size:1.18rem; max-width:32rem; }
   .hero-botoes{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.6rem; }
   .hero-foto{ aspect-ratio:4/5; }
   .hero-foto .placeholder-gradiente{ height:100%; min-height:320px; }
 
   .hero-numeros{
-    max-width:1180px; margin:3.2rem auto 0; display:grid;
+    max-width:1180px; margin:3.4rem auto 0; display:grid;
     grid-template-columns:repeat(3,1fr); gap:1.5rem; text-align:center;
     border-top:1px solid var(--linha); padding-top:2.4rem;
   }
-  .hero-numero-valor{ font-size:2.1rem; font-weight:800; color:var(--vanilla-escuro); }
-  .hero-numero-rotulo{ font-size:.88rem; color:var(--texto-suave); }
+  .hero-numero-valor{ font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:600; color:var(--vermelho); }
+  .hero-numero-rotulo{ font-size:.88rem; color:var(--tinta-suave); }
 
   .marcas-faixa{
     max-width:1180px; margin:2.6rem auto 0; padding:1.6rem 0 3rem;
@@ -194,8 +215,8 @@
     display:flex; flex-wrap:wrap; justify-content:center; gap:1rem 2.2rem;
   }
   .marcas-lista li{
-    font-weight:700; color:var(--texto-suave); font-size:.95rem;
-    letter-spacing:.02em; opacity:.75;
+    font-weight:500; color:var(--tinta-suave); font-size:.92rem;
+    letter-spacing:.03em; opacity:.8;
   }
 
   @media (max-width:860px){
@@ -210,16 +231,12 @@
   }
   .sobre-foto{ aspect-ratio:4/5; }
   .sobre-foto .placeholder-gradiente{ height:100%; min-height:280px; }
-  .promessas{ margin:1.6rem 0; display:grid; gap:.9rem; }
+  .promessas{ margin:1.6rem 0; display:grid; gap:1rem; }
   .promessas li{
-    display:flex; gap:.7rem; align-items:flex-start; font-weight:600; color:var(--texto);
+    display:flex; gap:.7rem; align-items:flex-start; font-weight:500; color:var(--tinta);
   }
-  .promessas li::before{
-    content:"✓"; flex:none; background:var(--vanilla-escuro); color:#fff;
-    width:22px; height:22px; border-radius:50%; display:flex; align-items:center;
-    justify-content:center; font-size:.78rem; margin-top:.1rem;
-  }
-  .assinatura{ font-family:'Instrument Serif',serif; font-style:italic; font-size:1.8rem; color:var(--vanilla-escuro); margin-top:1.2rem; }
+  .promessas li svg{ flex:none; margin-top:.15rem; color:var(--vermelho); }
+  .assinatura{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.9rem; color:var(--vermelho); margin-top:1.2rem; }
 
   @media (max-width:860px){ .sobre-grade{ grid-template-columns:1fr; } .sobre-foto{ max-width:280px; margin:0 auto; } }
 
@@ -237,15 +254,15 @@
   .destaque-capa .placeholder-gradiente{ height:100%; border-radius:0; min-height:0; }
   .botao-play{
     position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.92);
+    width:64px; height:64px; border-radius:50%; background:rgba(255,253,249,.94);
     display:flex; align-items:center; justify-content:center; font-size:1.4rem;
-    color:var(--vanilla-escuro); box-shadow:var(--sombra);
+    color:var(--vermelho); box-shadow:var(--sombra);
   }
   .destaque-capa figcaption{ display:none; }
-  .destaque-corpo{ padding:1.4rem; }
-  .destaque-numero{ font-size:1.6rem; font-weight:800; color:var(--vanilla-escuro); margin-bottom:.3rem; }
-  .destaque-rotulo{ font-size:.8rem; font-weight:600; color:var(--texto-suave); display:block; }
-  .destaque-corpo h3{ font-size:1.1rem; margin:.3rem 0; }
+  .destaque-corpo{ padding:1.5rem; }
+  .destaque-numero{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--vermelho); margin-bottom:.3rem; }
+  .destaque-rotulo{ font-family:'Jost',sans-serif; font-size:.8rem; font-weight:500; color:var(--tinta-suave); display:block; }
+  .destaque-corpo h3{ font-size:1.25rem; margin:.3rem 0; }
   .destaque-contexto{ font-size:.92rem; margin:0; }
 
   @media (max-width:860px){ .destaques-grade{ grid-template-columns:1fr; } }
@@ -254,11 +271,11 @@
   .filtros{ display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; margin-bottom:2.4rem; }
   .filtro-botao{
     background:var(--branco); border:1.5px solid var(--linha); border-radius:999px;
-    padding:.55rem 1.2rem; font-weight:700; font-size:.88rem; color:var(--texto-suave);
+    padding:.55rem 1.2rem; font-weight:500; font-size:.88rem; color:var(--tinta-suave);
     transition:all .2s ease;
   }
-  .filtro-botao:hover{ border-color:var(--vanilla-escuro); color:var(--vanilla-escuro); }
-  .filtro-botao[aria-pressed="true"]{ background:var(--vanilla); border-color:var(--vanilla); color:var(--texto); }
+  .filtro-botao:hover{ border-color:var(--vermelho); color:var(--vermelho); }
+  .filtro-botao[aria-pressed="true"]{ background:var(--vermelho); border-color:var(--vermelho); color:#fff; }
 
   .trabalhos-grade{
     display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.8rem;
@@ -272,32 +289,32 @@
   .trabalho-capa{ aspect-ratio:4/5; margin:0; }
   .trabalho-capa .placeholder-gradiente{ height:100%; border-radius:0; min-height:0; }
   .trabalho-capa figcaption{
-    position:absolute; bottom:0; left:0; right:0; background:rgba(20,30,26,.55);
+    position:absolute; bottom:0; left:0; right:0; background:rgba(44,42,38,.6);
     color:#fff; font-size:.72rem; padding:.4rem .7rem; margin:0;
   }
-  .trabalho-corpo{ padding:1.3rem; }
-  .estrelas{ color:var(--amarelo); letter-spacing:.15em; font-size:.95rem; margin-bottom:.5rem; }
-  .trabalho-corpo h3{ font-size:1.05rem; margin-bottom:.2rem; }
-  .trabalho-marca{ font-size:.85rem; font-weight:600; color:var(--vanilla-escuro); text-transform:uppercase; letter-spacing:.03em; }
+  .trabalho-corpo{ padding:1.35rem; }
+  .estrelas{ color:var(--vermelho); letter-spacing:.15em; font-size:.95rem; margin-bottom:.5rem; }
+  .trabalho-corpo h3{ font-size:1.15rem; }
+  .trabalho-marca{ font-size:.85rem; font-weight:500; color:var(--azul-escuro); text-transform:uppercase; letter-spacing:.04em; }
   .trabalho-rodape{ display:flex; align-items:center; justify-content:space-between; gap:.6rem; margin-top:1rem; }
   .etiqueta-consulta{
-    background:var(--gelo); border:1px solid var(--linha); border-radius:999px;
-    padding:.4rem .8rem; font-size:.76rem; font-weight:700; color:var(--texto-suave);
+    background:var(--creme); border:1px solid var(--linha); border-radius:999px;
+    padding:.4rem .8rem; font-size:.76rem; font-weight:500; color:var(--tinta-suave);
   }
 
   /* ===== 5. serviços ===== */
   .servicos-grade{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
   .servico-card{
     background:var(--branco); border-radius:var(--raio); box-shadow:var(--sombra);
-    padding:2rem 1.8rem; transition:transform .2s ease, box-shadow .2s ease;
+    padding:2.1rem 1.9rem; transition:transform .2s ease, box-shadow .2s ease;
   }
   .servico-card:hover{ transform:translateY(-6px); box-shadow:var(--sombra-forte); }
   .servico-numero{
-    display:inline-block; font-family:'Instrument Serif',serif; font-style:italic;
-    font-size:2.4rem; color:var(--amarelo); -webkit-text-stroke:1.5px var(--vanilla-escuro);
+    display:inline-block; font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:2.6rem; color:var(--creme); -webkit-text-stroke:1.5px var(--vermelho);
     margin-bottom:.4rem;
   }
-  .servico-card h3{ font-size:1.15rem; }
+  .servico-card h3{ font-size:1.2rem; }
   .servico-card p{ font-size:.94rem; margin:0; }
 
   @media (max-width:860px){ .servicos-grade{ grid-template-columns:1fr 1fr; } }
@@ -309,29 +326,29 @@
   }
   .metrica-card{
     text-align:center; background:var(--branco); border:1px solid var(--linha);
-    border-radius:var(--raio); padding:2rem 1rem;
+    border-radius:var(--raio); padding:2.1rem 1rem;
   }
-  .metrica-valor{ font-size:2.4rem; font-weight:800; color:var(--vanilla-escuro); margin:0; }
-  .metrica-valor.placeholder{ color:var(--texto-suave); font-style:italic; }
-  .metrica-rotulo{ font-size:.88rem; color:var(--texto-suave); margin:0; }
+  .metrica-valor{ font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; color:var(--vermelho); margin:0; }
+  .metrica-valor.placeholder{ color:var(--tinta-suave); font-style:italic; }
+  .metrica-rotulo{ font-size:.88rem; color:var(--tinta-suave); margin:0; }
 
   .resultados-grade{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:3.4rem; }
   .resultado-card{
-    background:var(--gelo); border-radius:var(--raio); padding:1.8rem;
+    background:var(--creme); border-radius:var(--raio); padding:1.9rem;
     border:1px dashed var(--linha);
   }
-  .resultado-marca{ text-transform:uppercase; font-size:.78rem; font-weight:700; color:var(--vanilla-escuro); letter-spacing:.04em; }
-  .resultado-card h3{ font-size:1.1rem; }
+  .resultado-marca{ text-transform:uppercase; font-size:.78rem; font-weight:600; color:var(--azul-escuro); letter-spacing:.05em; }
+  .resultado-card h3{ font-size:1.15rem; }
   .resultado-card p:last-child{ margin:0; font-size:.92rem; }
 
   .depoimentos-grade{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
   .depoimento-card{
     margin:0; background:var(--branco); border:1px solid var(--linha);
-    border-radius:var(--raio); padding:1.8rem; box-shadow:var(--sombra);
+    border-radius:var(--raio); padding:1.9rem; box-shadow:var(--sombra);
   }
-  .depoimento-card p{ font-size:1rem; color:var(--texto); }
-  .depoimento-card footer{ font-size:.85rem; color:var(--texto-suave); }
-  .depoimento-card cite{ font-style:normal; font-weight:700; color:var(--vanilla-escuro); }
+  .depoimento-card p{ font-size:1.02rem; color:var(--tinta); font-style:italic; font-family:'Cormorant Garamond',serif; }
+  .depoimento-card footer{ font-size:.85rem; color:var(--tinta-suave); font-family:'Jost',sans-serif; }
+  .depoimento-card cite{ font-style:normal; font-weight:600; color:var(--vermelho); }
 
   @media (max-width:860px){
     .metricas-grade{ grid-template-columns:1fr 1fr; }
@@ -341,44 +358,44 @@
 
   /* ===== 7. contato ===== */
   .contato-grade{ display:grid; grid-template-columns:1.2fr .8fr; gap:3rem; align-items:start; }
-  #form-contato{ display:grid; gap:1.1rem; background:var(--branco); padding:2rem; border-radius:var(--raio); box-shadow:var(--sombra); }
-  #form-contato label{ display:grid; gap:.4rem; font-weight:700; font-size:.9rem; }
+  #form-contato{ display:grid; gap:1.1rem; background:var(--branco); padding:2.1rem; border-radius:var(--raio); box-shadow:var(--sombra); }
+  #form-contato label{ display:grid; gap:.4rem; font-weight:500; font-size:.9rem; }
   #form-contato input, #form-contato textarea{
     border:1.5px solid var(--linha); border-radius:var(--raio-pequeno);
-    padding:.8rem 1rem; font-weight:500; resize:vertical;
+    padding:.8rem 1rem; font-weight:400; resize:vertical; background:var(--creme);
   }
-  #form-contato input:focus, #form-contato textarea:focus{ border-color:var(--vanilla-escuro); }
+  #form-contato input:focus, #form-contato textarea:focus{ border-color:var(--vermelho); }
   #form-confirmacao{
-    background:var(--gelo); border:1px solid var(--vanilla); color:var(--vanilla-escuro);
-    border-radius:var(--raio-pequeno); padding:1rem; font-weight:700; margin:0;
+    background:var(--creme); border:1px solid var(--azul); color:var(--azul-escuro);
+    border-radius:var(--raio-pequeno); padding:1rem; font-weight:500; margin:0;
   }
   #form-erro{
-    background:#fbeae9; border:1px solid #e3a7a1; color:#b3261e;
-    border-radius:var(--raio-pequeno); padding:1rem; font-weight:700; margin:0;
+    background:var(--erro-fundo); border:1px solid var(--vermelho); color:var(--erro);
+    border-radius:var(--raio-pequeno); padding:1rem; font-weight:500; margin:0;
   }
   .contato-links{ display:grid; gap:1rem; align-content:start; }
   .contato-links .botao{ justify-content:center; }
 
   .mensagem-vazia{
-    grid-column:1/-1; text-align:center; color:var(--texto-suave); font-size:.9rem;
-    background:var(--gelo); border:1px dashed var(--linha); border-radius:var(--raio-pequeno); padding:1.6rem;
+    grid-column:1/-1; text-align:center; color:var(--tinta-suave); font-size:.9rem;
+    background:var(--creme); border:1px dashed var(--linha); border-radius:var(--raio-pequeno); padding:1.6rem;
   }
 
   @media (max-width:860px){ .contato-grade{ grid-template-columns:1fr; } }
 
   /* ===== rodapé ===== */
   .rodape{
-    background:var(--texto); color:#fff; text-align:center; padding:3rem 1.5rem;
+    background:var(--tinta); color:var(--creme); text-align:center; padding:3.2rem 1.5rem;
   }
-  .rodape p{ color:rgba(255,255,255,.75); margin:.3rem 0; }
-  .rodape p:first-child{ font-weight:800; font-size:1.3rem; color:#fff; }
+  .rodape p{ color:rgba(236,229,214,.78); margin:.3rem 0; }
+  .rodape p:first-child{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:1.5rem; color:var(--creme); }
   .rodape-redes{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.4rem; margin:1rem 0; }
-  .rodape-redes a{ text-decoration:none; color:rgba(255,255,255,.85); font-weight:600; }
-  .rodape-redes a:hover{ color:var(--amarelo); }
+  .rodape-redes a{ text-decoration:none; color:rgba(236,229,214,.9); font-weight:500; }
+  .rodape-redes a:hover{ color:var(--azul); }
 
   /* ===== card de captura (mídia kit) ===== */
   .modal-fundo{
-    position:fixed; inset:0; background:rgba(20,30,26,.55); z-index:500;
+    position:fixed; inset:0; background:rgba(44,42,38,.55); z-index:500;
     display:flex; align-items:center; justify-content:center; padding:1.5rem;
   }
   .modal-fundo[hidden]{ display:none; }
@@ -386,19 +403,20 @@
     position:relative; background:var(--branco); border-radius:var(--raio);
     max-width:26rem; width:100%; padding:2.4rem 2rem 2rem; box-shadow:var(--sombra-forte);
   }
-  .modal h2{ font-size:1.4rem; margin-bottom:.5rem; }
-  .modal p{ font-size:.92rem; }
+  .modal-laco{ display:block; margin:0 auto .6rem; color:var(--vermelho); }
+  .modal h2{ font-size:1.5rem; margin-bottom:.5rem; text-align:center; }
+  .modal p{ font-size:.92rem; text-align:center; }
   .modal-fechar{
     position:absolute; top:.9rem; right:.9rem; width:34px; height:34px;
-    border-radius:50%; border:1px solid var(--linha); background:var(--gelo);
-    font-size:1.2rem; line-height:1; color:var(--texto-suave);
+    border-radius:50%; border:1px solid var(--linha); background:var(--creme);
+    font-size:1.2rem; line-height:1; color:var(--tinta-suave);
   }
   #form-modal{ display:grid; gap:1rem; margin-top:1rem; }
-  #form-modal label{ display:grid; gap:.35rem; font-weight:700; font-size:.88rem; }
+  #form-modal label{ display:grid; gap:.35rem; font-weight:500; font-size:.88rem; }
   #form-modal input{
-    border:1.5px solid var(--linha); border-radius:var(--raio-pequeno); padding:.75rem .9rem;
+    border:1.5px solid var(--linha); border-radius:var(--raio-pequeno); padding:.75rem .9rem; background:var(--creme);
   }
-  #form-modal input:focus{ border-color:var(--vanilla-escuro); }
+  #form-modal input:focus{ border-color:var(--vermelho); }
 </style>
 </head>
 <body>
@@ -407,7 +425,10 @@
 <header class="site-header">
   <p class="faixa-topo">Entrega em até 72h úteis</p>
   <div class="nav-container">
-    <a href="#capa" class="nav-logo">Samara Dias</a>
+    <a href="#capa" class="nav-logo">
+      <svg class="laco" width="22" height="14" viewBox="0 0 64 36" fill="none" aria-hidden="true"><path d="M30 18C30 18 30 4 12 4C2 4 0 12 4 17C8 22 20 20 30 18Z" fill="currentColor"/><path d="M34 18C34 18 34 4 52 4C62 4 64 12 60 17C56 22 44 20 34 18Z" fill="currentColor"/><path d="M30 18C30 18 30 32 12 32C2 32 0 24 4 19C8 14 20 16 30 18Z" fill="currentColor"/><path d="M34 18C34 18 34 32 52 32C62 32 64 24 60 19C56 14 44 16 34 18Z" fill="currentColor"/><ellipse cx="32" cy="18" rx="5.5" ry="4.5" fill="currentColor"/></svg>
+      Samara Dias
+    </a>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
       <span></span><span></span><span></span>
       <span class="sr-only">Abrir menu</span>
@@ -431,7 +452,7 @@
       <div class="hero-conteudo">
         <p class="hero-etiqueta">UGC Creator <em>em destaque</em></p>
         <h1>Samara Dias</h1>
-        <p class="hero-frase">Eu crio vídeos autênticos que mostram o seu produto sendo usado de verdade, prontos para virar anúncio ou postar no seu perfil.</p>
+        <p class="hero-frase">Eu sei o valor do real e sei como fazê-lo brilhar no digital.</p>
         <div class="hero-botoes">
           <a href="#contato" class="botao botao-primario">Falar comigo</a>
           <a href="#trabalhos" class="botao botao-secundario">Ver os trabalhos</a>
@@ -465,9 +486,18 @@
         <p>Oi, eu sou a Samara. Moro na Holanda e transformo produtos em vídeos que parecem uma recomendação de amiga, porque é exatamente isso que eu entrego: conteúdo autêntico, gravado com carinho e pensado para performar tanto no seu perfil quanto em anúncio.</p>
         <p>Trabalho com marcas de beleza, skincare, moda, comida, casa e decoração, fitness, maternidade, viagem e tech. Gosto de entender o produto antes de gravar, para que o vídeo pareça real, porque é real.</p>
         <ul class="promessas">
-          <li>Roteiro aprovado antes de gravar</li>
-          <li>Uma rodada de ajuste inclusa</li>
-          <li>Entrega em até 72 horas úteis</li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c0-6-4-9-9-9 0-4 3-7 9-7s9 3 9 7c-5 0-9 3-9 9Z" fill="currentColor"/></svg>
+            Roteiro aprovado antes de gravar
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c0-6-4-9-9-9 0-4 3-7 9-7s9 3 9 7c-5 0-9 3-9 9Z" fill="currentColor"/></svg>
+            Uma rodada de ajuste inclusa
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c0-6-4-9-9-9 0-4 3-7 9-7s9 3 9 7c-5 0-9 3-9 9Z" fill="currentColor"/></svg>
+            Entrega em até 72 horas úteis
+          </li>
         </ul>
         <p class="assinatura">Samara Dias</p>
       </div>
@@ -475,20 +505,20 @@
   </section>
 
   <!-- 3. CONTEÚDOS DE DESTAQUE -->
-  <section id="destaques" class="secao secao-cinza" aria-labelledby="destaques-titulo">
+  <section id="destaques" class="secao secao-creme" aria-labelledby="destaques-titulo">
     <h2 id="destaques-titulo">Conteúdos de <em>destaque</em></h2>
-    <div class="destaques-grade" id="destaques-grade"><!-- preenchido via JS a partir de DESTAQUES --></div>
+    <div class="destaques-grade" id="destaques-grade"><!-- preenchido via JS a partir dos vídeos vindos do banco de dados --></div>
   </section>
 
   <!-- 4. TRABALHOS POR NICHO -->
   <section id="trabalhos" class="secao" aria-labelledby="trabalhos-titulo">
     <h2 id="trabalhos-titulo">Trabalhos por <em>nicho</em></h2>
     <div class="filtros" id="filtros" role="group" aria-label="Filtrar trabalhos por nicho"><!-- preenchido via JS a partir de NICHOS --></div>
-    <div class="trabalhos-grade" id="trabalhos-grade"><!-- preenchido via JS a partir de TRABALHOS --></div>
+    <div class="trabalhos-grade" id="trabalhos-grade"><!-- preenchido via JS a partir dos vídeos vindos do banco de dados --></div>
   </section>
 
   <!-- 5. COMO EU TE AJUDO -->
-  <section id="servicos" class="secao secao-cinza" aria-labelledby="servicos-titulo">
+  <section id="servicos" class="secao secao-creme" aria-labelledby="servicos-titulo">
     <h2 id="servicos-titulo">Como eu te <em>ajudo</em></h2>
     <div class="servicos-grade" id="servicos-grade"><!-- preenchido via JS a partir de SERVICOS --></div>
   </section>
@@ -502,7 +532,7 @@
   </section>
 
   <!-- 7. BORA CRIAR JUNTOS -->
-  <section id="contato" class="secao secao-cinza" aria-labelledby="contato-titulo">
+  <section id="contato" class="secao secao-creme" aria-labelledby="contato-titulo">
     <h2 id="contato-titulo">Bora criar <em>juntos</em></h2>
     <div class="contato-grade">
       <form id="form-contato" class="reveal" novalidate>
@@ -545,6 +575,7 @@
 <div class="modal-fundo" id="modal-fundo" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
     <button type="button" class="modal-fechar" id="modal-fechar" aria-label="Fechar">×</button>
+    <svg class="modal-laco" width="30" height="18" viewBox="0 0 64 36" fill="none" aria-hidden="true"><path d="M30 18C30 18 30 4 12 4C2 4 0 12 4 17C8 22 20 20 30 18Z" fill="currentColor"/><path d="M34 18C34 18 34 4 52 4C62 4 64 12 60 17C56 22 44 20 34 18Z" fill="currentColor"/><path d="M30 18C30 18 30 32 12 32C2 32 0 24 4 19C8 14 20 16 30 18Z" fill="currentColor"/><path d="M34 18C34 18 34 32 52 32C62 32 64 24 60 19C56 14 44 16 34 18Z" fill="currentColor"/><ellipse cx="32" cy="18" rx="5.5" ry="4.5" fill="currentColor"/></svg>
     <h2 id="modal-titulo">Quer meu mídia kit completo?</h2>
     <p>Deixe seu nome e e-mail que eu te envio com todos os meus números e conteúdos.</p>
     <form id="form-modal">
@@ -568,9 +599,9 @@
   /* =========================================================
      DADOS: edite os arrays abaixo para atualizar o portfólio
      sem precisar mexer no HTML.
-     Os vídeos (destaques e trabalhos por nicho) não ficam mais
-     aqui: eles vêm do banco de dados (tabela "videos"), editados
-     pelo painel administrativo em /admin.
+     Os vídeos (destaques e trabalhos por nicho) não ficam aqui:
+     eles vêm do banco de dados (tabela "videos"), editados pelo
+     painel administrativo em /admin.
      ========================================================= */
 
   // Marcas atendidas (faixa que fecha a capa)
@@ -639,6 +670,8 @@
   }
 
   function renderDestaques(destaques){
+    // AQUI ENTRA O LINK DO VÍDEO: campo "link" de cada vídeo (tabela "videos"),
+    // usado no href do card inteiro logo abaixo.
     var alvo = document.getElementById("destaques-grade");
     if(!destaques || destaques.length === 0){
       alvo.innerHTML = '<p class="mensagem-vazia">Seus vídeos de destaque vão aparecer aqui assim que você marcar um vídeo com um número (como visualizações) no painel administrativo.</p>';
@@ -648,6 +681,7 @@
       var contexto = d.marca ? ("Vídeo gravado para "+d.marca+".") : "";
       return '<a class="destaque-card reveal" href="'+(d.link||"#")+'" target="_blank" rel="noopener" aria-label="Assistir ao vídeo: '+d.titulo+'">' +
         '<figure class="destaque-capa placeholder-bloco">' +
+          /* AQUI ENTRA A CAPA: troque este bloco em degradê por uma <img> vertical 9:16 de capa do vídeo */
           placeholderBloco("Capa vertical 9:16 do vídeo "+d.titulo+". Troque por uma imagem real de capa.") +
           '<span class="botao-play" aria-hidden="true">&#9654;</span>' +
           '<figcaption>'+(d.formato || (d.nicho+", formato vertical 9:16"))+'</figcaption>' +
