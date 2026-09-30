@@ -459,6 +459,13 @@
   }
   .servicos-nota{ display:block; width:100%; text-align:center; }
   .servicos-nota em{ font-family:"Bodoni Moda", serif; font-style:italic; font-size:1.15em; }
+  /* Fotos UGC */
+  .fotos-intro{ text-align:center; max-width:560px; margin:-1.2rem auto 2.2rem; color:var(--tinta-suave); }
+  .fotos-grade{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .foto-item{ margin:0; position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:var(--raio); }
+  .foto-item img, .foto-item .placeholder-gradiente{ width:100%; height:100%; min-height:0; object-fit:cover; display:block; }
+  .foto-item figcaption{ position:absolute; left:.7rem; bottom:.7rem; background:rgba(255,253,249,.92); color:var(--tinta); font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:.3rem .7rem; border-radius:999px; }
+  @media (max-width:860px){ .fotos-grade{ grid-template-columns:repeat(2,1fr); gap:.7rem; } }
 </style>
 </head>
 <body>
@@ -474,8 +481,8 @@
       <span class="sr-only">Abrir menu</span>
     </button>
     <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
-      <a class="nav-link" href="#destaques">Destaques</a>
       <a class="nav-link" href="#trabalhos">Trabalhos</a>
+      <a class="nav-link" href="#fotos">Fotos</a>
       <a class="nav-link" href="#servicos">Serviços</a>
       <a class="nav-link" href="#numeros" id="nav-numeros">Números</a>
       <a class="nav-link" href="#sobre">Sobre</a>
@@ -516,18 +523,50 @@
     </div>
   </section>
 
-  <!-- 3. CONTEÚDOS DE DESTAQUE -->
-  <section id="destaques" class="secao" aria-labelledby="destaques-titulo">
-    <h2 id="destaques-titulo">Conteúdos de <em>destaque</em></h2>
-    <div class="destaques-grade" id="destaques-grade"><!-- preenchido via JS a partir dos vídeos vindos do banco de dados --></div>
-  </section>
-
   <!-- 4. TRABALHOS POR NICHO -->
   <section id="trabalhos" class="secao" aria-labelledby="trabalhos-titulo">
     <h2 id="trabalhos-titulo">Trabalhos por <em>nicho</em></h2>
     <div class="filtros" id="filtros" role="group" aria-label="Filtrar trabalhos por nicho"><!-- preenchido via JS a partir de NICHOS --></div>
     <div class="trabalhos-grade" id="trabalhos-grade"><!-- preenchido via JS a partir dos vídeos vindos do banco de dados --></div>
     <div class="cta-bloco"><a href="#contato" class="botao botao-primario">Trabalhe comigo</a></div>
+  </section>
+
+  <!-- FOTOS UGC -->
+  <section id="fotos" class="secao secao-creme" aria-labelledby="fotos-titulo">
+    <h2 id="fotos-titulo">Fotos com cara de <em>vida real</em></h2>
+    <p class="fotos-intro">Seu produto em uso, com luz natural e cenário de casa. Prontas para loja virtual, anúncio e redes sociais.</p>
+    <div class="fotos-grade">
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-1.jpg" alt="Foto de produto em ambiente de casa"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de produto em ambiente de casa. Troque por uma imagem real."></div>
+        <figcaption>casa e decoração</figcaption>
+      </figure>
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-2.jpg" alt="Foto de produto de beleza em uso"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de produto de beleza em uso. Troque por uma imagem real."></div>
+        <figcaption>beleza</figcaption>
+      </figure>
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-3.jpg" alt="Foto de skincare na rotina"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de skincare na rotina. Troque por uma imagem real."></div>
+        <figcaption>skincare</figcaption>
+      </figure>
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-4.jpg" alt="Foto de gadget em uso no dia a dia"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de gadget em uso no dia a dia. Troque por uma imagem real."></div>
+        <figcaption>tech</figcaption>
+      </figure>
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-5.jpg" alt="Foto de produto de bem-estar"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de produto de bem-estar. Troque por uma imagem real."></div>
+        <figcaption>bem-estar</figcaption>
+      </figure>
+      <figure class="foto-item">
+        <!-- Troque a linha abaixo por <img src="foto-6.jpg" alt="Foto de detalhe do produto"> -->
+        <div class="placeholder-gradiente" role="img" aria-label="Foto de detalhe do produto. Troque por uma imagem real."></div>
+        <figcaption>detalhe</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- 5. COMO EU TE AJUDO -->
@@ -710,6 +749,7 @@
     // AQUI ENTRA O LINK DO VÍDEO: campo "link" de cada vídeo (tabela "videos"),
     // usado no href do card inteiro logo abaixo.
     var alvo = document.getElementById("destaques-grade");
+    if(!alvo) return;
     if(!destaques || destaques.length === 0){
       alvo.innerHTML = '<p class="mensagem-vazia">Seus vídeos de destaque vão aparecer aqui assim que você marcar um vídeo com um número (como visualizações) no painel administrativo.</p>';
       return;
