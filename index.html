@@ -7,7 +7,7 @@
 <meta name="description" content="Samara Dias, UGC Creator na Holanda: vídeos com cara de recomendação de amiga para marcas de casa e decoração, beleza, tech e maternidade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --creme:#ece5d6;
@@ -440,7 +440,11 @@
   #form-modal input:focus{ border-color:var(--vermelho); }
 
   /* Ajustes: fonte dos títulos mais leve, promessas em linha, nota centralizada */
-  h1, h2, .nav-logo, .nicho-titulo, .servico-card h3{ font-family:"Archivo", sans-serif; font-weight:700; letter-spacing:.01em; }
+  h1, h2, .nav-logo, .nicho-titulo, .servico-card h3{ font-family:"Archivo", sans-serif; font-weight:500; letter-spacing:-0.02em; }
+  /* Nome inteiro numa linha e numa fonte só (itálico só no corpo) */
+  .hero-conteudo h1{ font-size:clamp(2.4rem,6vw,4.6rem); white-space:nowrap; }
+  .hero-conteudo h1 em, .nav-logo em{ display:inline; font-family:inherit; font-style:normal; font-weight:inherit; font-size:inherit; color:inherit; letter-spacing:inherit; text-transform:inherit; }
+  .nav-logo{ gap:.3em; }
   .promessas{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:1rem 0 1.6rem; padding:0; border-top:1px solid var(--linha); border-bottom:1px solid var(--linha); }
   .promessas li{ display:block; padding:1rem .8rem; text-align:center; font-weight:500; font-size:.95rem; line-height:1.35; }
   .promessas li + li{ border-left:1px solid var(--linha); }
