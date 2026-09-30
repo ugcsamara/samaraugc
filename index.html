@@ -7,7 +7,7 @@
 <meta name="description" content="Samara Dias, UGC Creator na Holanda: vídeos com cara de recomendação de amiga para marcas de casa e decoração, beleza, tech e maternidade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400;1,6..96,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --creme:#ece5d6;
@@ -438,6 +438,20 @@
     border:1.5px solid var(--linha); border-radius:var(--raio-pequeno); padding:.75rem .9rem; background:var(--creme);
   }
   #form-modal input:focus{ border-color:var(--vermelho); }
+
+  /* Ajustes: fonte dos títulos mais leve, promessas em linha, nota centralizada */
+  h1, h2, .nav-logo, .nicho-titulo, .servico-card h3{ font-family:"Archivo", sans-serif; font-weight:700; letter-spacing:.01em; }
+  .promessas{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:1rem 0 1.6rem; padding:0; border-top:1px solid var(--linha); border-bottom:1px solid var(--linha); }
+  .promessas li{ display:block; padding:1rem .8rem; text-align:center; font-weight:500; font-size:.95rem; line-height:1.35; }
+  .promessas li + li{ border-left:1px solid var(--linha); }
+  .promessas li::before{ display:none; }
+  .promessas li strong{ display:block; font-family:"Bodoni Moda", serif; font-style:italic; font-weight:500; font-size:1.5rem; color:var(--vermelho); line-height:1; margin-bottom:.3rem; }
+  @media (max-width:600px){
+    .promessas{ grid-template-columns:1fr; }
+    .promessas li + li{ border-left:0; border-top:1px solid var(--linha); }
+  }
+  .servicos-nota{ display:block; width:100%; text-align:center; }
+  .servicos-nota em{ font-family:"Bodoni Moda", serif; font-style:italic; font-size:1.15em; }
 </style>
 </head>
 <body>
@@ -513,7 +527,7 @@
   <section id="servicos" class="secao secao-escura" aria-labelledby="servicos-titulo">
     <h2 id="servicos-titulo">O que eu <em>entrego</em></h2>
     <div class="servicos-grade" id="servicos-grade"><!-- preenchido via JS a partir de SERVICOS --></div>
-    <p class="servicos-nota"><strong>Também faço pacotes mensais.</strong> Me chama para montar o seu.</p>
+    <p class="servicos-nota">Pacote mensal é mais interessante pra você? <em>Vamos montar o seu!</em></p>
     <div class="cta-bloco"><a href="#contato" class="botao botao-primario">Trabalhe comigo</a></div>
   </section>
 
@@ -545,15 +559,9 @@
         </ul>
         <p class="sobre-subtitulo">Por que trabalhar comigo</p>
         <ul class="promessas">
-          <li>
-            Roteiro aprovado antes de gravar
-          </li>
-          <li>
-            Uma rodada de ajuste inclusa
-          </li>
-          <li>
-            Entrega em até 72 horas úteis
-          </li>
+          <li><strong>roteiro</strong>aprovado antes de gravar</li>
+          <li><strong>1 ajuste</strong>incluso no pacote</li>
+          <li><strong>72h</strong>úteis para entrega</li>
         </ul>
         <p class="assinatura">Samara Dias</p>
       </div>
